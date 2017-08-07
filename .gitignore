@@ -42,6 +42,14 @@ testem.log
 Thumbs.db
 
 # firebase
-
-/functions
+**/node_modules/*
+**/.firebaserc
 .firebaserc
+
+# environments
+
+/environments
+
+environment.prod.ts
+environment.ts
+
