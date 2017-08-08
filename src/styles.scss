@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body, html{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+h1, h2, h3 {
+    font-family: 'Droid Sans', sans-serif;
+}
+
+
+.flex{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader{
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+}
