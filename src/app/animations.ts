@@ -27,18 +27,16 @@ export const slideInDelay = trigger('slideInDelay', [
 
 export const slideDown = trigger('slideDown', [
     state('*', style({
-        transform: 'translateY(100%)',
+        transform: 'translateY(-100%)',
+        backgoundColor: '#f50057'
     })),
     state('in', style({
         transform: 'translateY(0)',
+        backgoundColor: '#00e5ff'
     })),
-    state('out', style({
-        transform: 'translateY(-100%)',
-    })),
-    transition('* => in', animate('600ms ease-in', keyframes([
-        style({ transform: 'translateY(-100%)', offset: 0 }),
-        style({ transform: 'translateY(0px)', offset: 0.3 }),
-        style({ transform: 'translateY(-10%)', offset: 0.6 }),
-        style({ transform: 'translateY(0px)', offset: 1.0 })
+    transition('* <=> in', animate('600ms ease-in', keyframes([
+        style({backgroundColor: '#f50057', transform: 'translateY(0px)', offset: 0.3 }),
+        style({backgroundColor: '#ff80ab', transform: 'translateY(-10%)', offset: 0.6 }),
+        style({backgroundColor: '#00e5ff', transform: 'translateY(0px)', offset: 1.0 })
     ])))
 ]);
