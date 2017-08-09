@@ -34,7 +34,7 @@ export const slideDown = trigger('slideDown', [
         transform: 'translateY(0)',
         backgoundColor: '#00e5ff'
     })),
-    transition('* <=> in', animate('600ms ease-in', keyframes([
+    transition('* <=> in', animate('1000ms ease-in', keyframes([
         style({backgroundColor: '#f50057', transform: 'translateY(0px)', offset: 0.3 }),
         style({backgroundColor: '#ff80ab', transform: 'translateY(-10%)', offset: 0.6 }),
         style({backgroundColor: '#00e5ff', transform: 'translateY(0px)', offset: 1.0 })
