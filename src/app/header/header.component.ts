@@ -3,7 +3,7 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 import { Observable } from 'rxjs/Observable';
 import { Header } from './header';
 // animations
-import { slideIn, slideInDelay} from '../animations'; // path to your animations.ts file
+import { slideIn, slideInDelay, slideDown} from '../animations'; // path to your animations.ts file
 
 @Component({
   selector: 'dct-header',
@@ -11,13 +11,15 @@ import { slideIn, slideInDelay} from '../animations'; // path to your animations
   styleUrls: ['./header.component.scss'],
   animations: [
    slideIn,
-   slideInDelay
+   slideInDelay,
+   slideDown
   ]
 })
 export class HeaderComponent {
   header: FirebaseObjectObservable<any>;
   slideInState = 'in';
   slideInStateDelay = 'in';
+  slideDownState = 'in';
   constructor(db: AngularFireDatabase) {
     this.header = db.object('/header');
   }

@@ -1,8 +1,9 @@
+<div [@slideDown]="slideDownState" class="hd_bg-color"></div>
 <div class="hd_container row">
     <div [@slideIn]="slideInState" class="col s12 center-align">
         <h2>{{ (header | async)?.title }}</h2>
     </div>
-    <div  [@slideInDelay]="slideInStateDelay" class="col s12 center-align">
+    <div [@slideInDelay]="slideInStateDelay" class="col s12 center-align">
         <h3>{{ (header | async)?.subtitle }}</h3>
     </div>
 </div>
