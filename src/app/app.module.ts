@@ -12,11 +12,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // componentes
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,

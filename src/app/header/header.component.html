@@ -1,9 +1,17 @@
-<div [@slideDown]="slideDownState" class="hd_bg-color"></div>
-<div class="hd_container row">
-    <div [@slideIn]="slideInState" class="col s12 center-align">
-        <h2><span>{{ (header | async)?.title }}</span></h2>
+
+<div [@slideDown]="slideDownState" class="hd_container row">
+    <div  [@slideDownAvatar]="slideDownState" class="avatar-container col s12 m12 l4 center-align">
+        <div class="avatar-img">
+        </div>
     </div>
-    <div [@slideInDelay]="slideInStateDelay" class="col s12 center-align">
-        <h3><span>{{ (header | async)?.subtitle }}</span></h3>
+    <div class="col s12 m12 l4  center-align">
+        <div [@slideIn]="slideInState">
+            <h2><span>{{ (header | async)?.title }}</span></h2>
+        </div>
+        <div [@slideInDelay]="slideInStateDelay">
+            <h3><span>{{ (header | async)?.subtitle }}</span></h3>
+        </div>
     </div>
+
+
 </div>
