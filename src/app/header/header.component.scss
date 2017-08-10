@@ -20,12 +20,38 @@
     top: 0;
     left: 0;
     background-color: #00e5ff;
-    -webkit-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.75);
-    box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.75);
+    border-style: dashed;
+    border-color: #546e7a;
+    border-top: none;
+    border-bottom: none;
+    border-width: 10px; 
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.2);
+}
+span{
+    padding: 10px;
+    background-color: rgba(#ffff00, 1) ;
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.5);
+}
+h3>span{
+    /*
+    border-style: solid;
+    border-color: #546e7a;
+    border-width: 2px;
+    */
+    padding: 10px;
+    background-color: rgba(#ffff00, 1) ;
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.5);
 }
 
+
 h2{
+    color: #546e7a;
     font-family: 'Droid Sans', sans-serif;
     @media #{$small-and-down} {
         font-size: 35px;
@@ -33,6 +59,8 @@ h2{
 }
 
 h3{
+    color: #ff4081;
     font-size: 20px;
     font-family: 'PT Mono', monospace;
+    font-weight: bold;
 }
