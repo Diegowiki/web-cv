@@ -7,9 +7,10 @@
             </div>
         </div>
     </div>
-    <div *ngIf="modalActive" class="modal-container">
-        <div class="_modal">
+    <div *ngIf="modalActive" [@fadeInModal]= "slideModal" class="modal-container">
+        <div [@fadeInModalContent]= "slideModal" class="_modal">
             <div (click)="toggleModal()"><i class="material-icons _close">close</i></div>
+            <h3>{{_tarjeta.title}}<br></h3>
             <ul>
                 <li *ngFor="let item of _tarjeta.items">♦ {{item}}</li>
             </ul>

@@ -5,6 +5,13 @@ $small-screen: 600px !default;
 $medium-screen: 992px !default;
 $large-screen: 1200px !default;
 
+// fix header responsiveness
+$fix-header-max: 1334px !default;
+$fix-header-min: 993px !default;
+$fix-only: "only screen and (min-width : #{$fix-header-min}) and (max-width : #{$fix-header-max})" !default;
+
+
+
 $xsmall-screen: 405px !default;
 
 $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
@@ -14,3 +21,24 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
 $xsmall: "only screen and (max-width : #{$xsmall-screen})" !default;
+
+// colors
+$primary: #6DD1BB;
+$primary-1: #9CE8D7;
+$primary-2: #D2F8F0;
+$primary-01: #47B69D; //notation 01 for darkening
+$primary-02: #2A9C83;
+// secondary palette
+$secondary: #FFD185;
+$secondary-1: #FFE0AC;
+$secondary-2: #FFF0D8;
+$secondary-01: #FFC563;
+$secondary-02: #F2B041;
+// accent palette
+$accent: #F88194; 
+$accent-1: #FBAAB7;
+$accent-2: #FED7DD;
+$accent-01: #F45F77;
+$accent-02: #E53E58;
+// text palette
+$darkTxt: #546e7a;

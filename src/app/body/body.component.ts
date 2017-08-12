@@ -1,4 +1,4 @@
-import { slideCard1 } from './../animations';
+import { slideCard1, fadeInModal, fadeInModalContent } from './../animations';
 import { Tarjeta } from './tarjeta';
 import { Component } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
@@ -9,7 +9,9 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
   animations: [
-    slideCard1
+    slideCard1,
+    fadeInModal,
+    fadeInModalContent
   ]
 })
 export class BodyComponent {
@@ -22,7 +24,6 @@ export class BodyComponent {
 
   constructor(private db: AngularFireDatabase) {
     this.tarjetas = this.db.list('/tarjetas');
-    this.tarjetas.push({ title: 'nueva tarjeta', items: ['hola', 'que pasa'] });
     this.tarjetas.subscribe(
       (tarjeta) => {
         this.slideCard1St = 'in';
@@ -41,9 +42,12 @@ export class BodyComponent {
 
   toggleModal(_tarjeta: Tarjeta) {
     this.modalActive = (this.modalActive === true ? false : true);
-    this.slideModal = (this.slideModal === 'in' ? '*' : 'in');
+    this.slideModal = 'in';
+    // this.slideModal = (this.slideModal === 'in' ? '*' : 'in');
     this._tarjeta = _tarjeta;
-    console.log(this.modalActive, this.slideModal, this._tarjeta );
+    console.log(this.modalActive, this.slideModal, this._tarjeta);
   }
+
+
 
 }

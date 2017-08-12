@@ -23,15 +23,13 @@ export const slideInDelay = trigger('slideInDelay', [
 export const slideDown = trigger('slideDown', [
     state('*', style({
         transform: 'translateY(-100%)',
-        backgoundColor: '#fff'
     })),
     state('in', style({
         transform: 'translateY(0)',
-        backgoundColor: '#00e5ff'
     })),
     transition('* <=> in', animate('300ms ease-in', keyframes([
-        style({backgroundColor: '#fff', transform: 'translateY(-100%)', offset: 0 }),
-        style({backgroundColor: '#00e5ff', transform: 'translateY(0px)', offset: 1 })
+        style({ transform: 'translateY(-100%)', offset: 0 }),
+        style({ transform: 'translateY(0px)', offset: 1 })
     ])))
 ]);
 
@@ -58,5 +56,28 @@ export const slideDownAvatar = trigger('slideDownAvatar', [
         style({ transform: 'TranslateX(2%)', offset: 0.7 }),
         style({ transform: 'TranslateX(0)', offset: 1 })
     ])))
+]);
+
+export const fadeInModal = trigger('fadeInModal', [
+    state('*', style({
+        opacity: '0',
+    })),
+    state('in', style({
+        opacity: '1',
+        // backgoundColor: '#00e5ff'
+    })),
+    transition('* <=> in', animate('300ms linear'))
+]);
+
+export const fadeInModalContent = trigger('fadeInModalContent', [
+    state('*', style({
+        transform: 'scale(0)',
+
+    })),
+    state('in', style({
+        transform: 'scale(1)',
+        // backgoundColor: '#00e5ff'
+    })),
+    transition('* <=> in', animate('400ms ease-in'))
 ]);
 
