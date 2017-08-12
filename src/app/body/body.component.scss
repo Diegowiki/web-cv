@@ -1,4 +1,9 @@
+@import "../../_colors";
+@import "../../_variables";
 
+.body-content{
+    position: relative;    
+}
 .myCardBox{
     padding: 10px;
     display: flex;
@@ -33,4 +38,44 @@
     transform: scale(1);
     background-color: #ff4081;
     cursor: pointer;
+}
+.modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(grey, 0.4);
+   
+}
+._modal{
+    position: relative;
+    z-index: 35;
+    width: 20%; 
+    height: 20%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 10px -4px rgba(0,0,0,0.2);
+    font-family: 'Vidaloka', serif;
+    font-size: 20px;
+}
+
+._close{
+    font-size: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+._close:hover{
+     cursor: pointer;
 }

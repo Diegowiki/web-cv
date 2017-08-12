@@ -1,7 +1,7 @@
 import { slideCard1 } from './../animations';
 import { Tarjeta } from './tarjeta';
-import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
+import { Component } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -9,15 +9,41 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
   animations: [
-   slideCard1
+    slideCard1
   ]
 })
-export class BodyComponent implements OnInit {
-  slideCard1St = 'in';
+export class BodyComponent {
+  tarjetas: FirebaseListObservable<Tarjeta>;
+  _tarjeta: Tarjeta;
+  slideCard1St: string;
+  slideModal: string;
+  modalActive: boolean;
+  lista: string[];
 
-  constructor() { }
+  constructor(private db: AngularFireDatabase) {
+    this.tarjetas = this.db.list('/tarjetas');
+    this.tarjetas.push({ title: 'nueva tarjeta', items: ['hola', 'que pasa'] });
+    this.tarjetas.subscribe(
+      (tarjeta) => {
+        this.slideCard1St = 'in';
+        console.log(tarjeta);
+      },
+      err => console.log(err)
+    );
+  }
 
-  ngOnInit() {
+  addCard() {
+    this.tarjetas.push({ title: 'nueva tarjeta', items: ['hola', 'que pasa'] });
+  }
+  rmCard(key: string) {
+    this.tarjetas.remove(key);
+  }
+
+  toggleModal(_tarjeta: Tarjeta) {
+    this.modalActive = (this.modalActive === true ? false : true);
+    this.slideModal = (this.slideModal === 'in' ? '*' : 'in');
+    this._tarjeta = _tarjeta;
+    console.log(this.modalActive, this.slideModal, this._tarjeta );
   }
 
 }

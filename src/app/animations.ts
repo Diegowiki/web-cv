@@ -8,7 +8,7 @@ export const slideIn = trigger('slideIn', [
     state('in', style({
         transform: 'translateX(0)',
     })),
-    transition('* => in', animate('1000ms 100ms ease-in'))
+    transition('* => in', animate('600ms 200ms ease-in'))
 ]);
 export const slideInDelay = trigger('slideInDelay', [
     state('*', style({
@@ -17,7 +17,7 @@ export const slideInDelay = trigger('slideInDelay', [
     state('in', style({
         transform: 'translateX(0)',
     })),
-    transition('* => in', animate('1000ms 700ms ease-in'))
+    transition('* => in', animate('600ms 200ms ease-in'))
 ]);
 
 export const slideDown = trigger('slideDown', [
@@ -29,7 +29,7 @@ export const slideDown = trigger('slideDown', [
         transform: 'translateY(0)',
         backgoundColor: '#00e5ff'
     })),
-    transition('* <=> in', animate('500ms linear', keyframes([
+    transition('* <=> in', animate('300ms ease-in', keyframes([
         style({backgroundColor: '#fff', transform: 'translateY(-100%)', offset: 0 }),
         style({backgroundColor: '#00e5ff', transform: 'translateY(0px)', offset: 1 })
     ])))
@@ -43,17 +43,20 @@ export const slideCard1 = trigger('slideCard1', [
         transform: 'translateY(0)',
         // backgoundColor: '#00e5ff'
     })),
-    transition('* <=> in', animate('600ms 1500ms ease-in-out'))
+    transition('* <=> in', animate('400ms ease-in'))
 ]);
 
 export const slideDownAvatar = trigger('slideDownAvatar', [
     state('*', style({
-        transform: 'translateY(-400%)',
+        transform: 'TranslateX(-100%)',
     })),
     state('in', style({
-        transform: 'translateY(0)',
+        transform: 'TranslateX(0)',
         // backgoundColor: '#00e5ff'
     })),
-    transition('* <=> in', animate('500ms 2000ms ease-in-out'))
+    transition('* <=> in', animate('500ms 1000ms linear', keyframes([
+        style({ transform: 'TranslateX(2%)', offset: 0.7 }),
+        style({ transform: 'TranslateX(0)', offset: 1 })
+    ])))
 ]);
 

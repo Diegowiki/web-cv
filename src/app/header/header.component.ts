@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { Header } from './header';
@@ -16,7 +16,7 @@ import { slideIn, slideInDelay, slideDown, slideDownAvatar } from '../animations
     slideDownAvatar
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   header: FirebaseObjectObservable<Header>;
   // headerOnInit: FirebaseObjectObservable<Header>;
   slideInState: string;
@@ -35,9 +35,6 @@ export class HeaderComponent implements OnInit {
       },
       err => console.log(err)
     );
-
-  }
-  ngOnInit(): void {
 
   }
 }
