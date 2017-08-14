@@ -34,14 +34,15 @@ export const slideDown = trigger('slideDown', [
 ]);
 
 export const slideCard1 = trigger('slideCard1', [
-    state('*', style({
-        transform: 'translateY(-600%)',
-    })),
     state('in', style({
         transform: 'translateY(0)',
-        // backgoundColor: '#00e5ff'
     })),
-    transition('* <=> in', animate('400ms ease-in'))
+    state('void', style({
+        transform: 'translateY(-100vh)',
+        opacity: 0,
+    })),
+    transition('void <=> in', animate('500ms ease-in-out')
+    )
 ]);
 
 export const slideDownAvatar = trigger('slideDownAvatar', [

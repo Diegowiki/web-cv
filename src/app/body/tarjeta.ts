@@ -1,6 +1,7 @@
 export class Tarjeta {
     constructor(
         title: string,
-        items: string[]
+        items: string[],
+        visible: boolean
     ) {}
 }

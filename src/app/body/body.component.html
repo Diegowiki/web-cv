@@ -1,14 +1,14 @@
-<div class="body-content">
-    <div class="row">
-        <div *ngFor="let tarjeta of tarjetas | async" [@slideCard1]="slideCard1St" class="myCardBox col s6">
-            <div (click)="toggleModal(tarjeta)" class="myCard">
-                <h2 class="center-align"><span>{{ tarjeta.title }}</span></h2>
-                <a class="btn-floating btn-large waves-effect waves-light red" (click)="rmCard(tarjeta.$key)"><i class="material-icons">remove</i></a>
-            </div>
+<div id="box" class="body-content">
+    <div  class="row">
+        <div *ngFor="let tarjeta of tarjetas | async"  [@slideCard1]="slideCard1St" class="myCardBox col s12 m12 l6">
+                <div (click)="toggleModal(tarjeta)" class="myCard">
+                    <h2 class="center-align"><span>{{ tarjeta.title }}</span></h2>
+                    <a class="btn-floating btn-large waves-effect waves-light red" (click)="rmCard(tarjeta)"><i class="material-icons">remove</i></a>
+                </div>        
         </div>
     </div>
-    <div *ngIf="modalActive" [@fadeInModal]= "slideModal" class="modal-container">
-        <div [@fadeInModalContent]= "slideModal" class="_modal">
+    <div *ngIf="modalActive" [@fadeInModal]="slideModal" class="modal-container">
+        <div [@fadeInModalContent]="slideModal" class="_modal">
             <div (click)="toggleModal()"><i class="material-icons _close">close</i></div>
             <h3>{{_tarjeta.title}}<br></h3>
             <ul>
@@ -16,5 +16,6 @@
             </ul>
         </div>
     </div>
-    <a style="margin: 20px; position: fixed; bottom: 0; right: 0;" class="btn-floating btn-large waves-effect waves-light green z-depth-3" (click)="addCard()"><i class="material-icons">add</i></a>
+    <a style="margin: 20px; position: fixed; bottom: 0; right: 0;" class="btn-floating btn-large waves-effect waves-light green z-depth-3"
+        (click)="addCard()"><i class="material-icons">add</i></a>
 </div>
